@@ -1,0 +1,37 @@
+[package]
+name = "disk_scanner"
+version = "0.2.0"
+edition = "2021"
+description = "High-performance parallel disk scanner with smart aggregation for building disk usage visualizations"
+license = "MIT"
+repository = "https://github.com/quivent/disk_scanner_rs"
+documentation = "https://docs.rs/disk_scanner"
+readme = "README.md"
+keywords = ["disk", "scanner", "parallel", "filesystem", "treemap"]
+categories = ["filesystem", "command-line-utilities", "visualization"]
+authors = ["Quivent"]
+rust-version = "1.70"
+
+[lib]
+name = "disk_scanner"
+path = "src/lib.rs"
+
+[[bin]]
+name = "disk_scanner"
+path = "src/main.rs"
+
+[dependencies]
+rayon = "1.10"
+crossbeam = "0.8"
+parking_lot = "0.12"
+dashmap = "6.1"
+num_cpus = "1.16"
+humansize = "2.1"
+libc = "0.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
