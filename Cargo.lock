@@ -90,6 +90,7 @@ version = "0.2.0"
 dependencies = [
  "crossbeam",
  "dashmap",
+ "getattrlistbulk",
  "humansize",
  "libc",
  "num_cpus",
@@ -104,6 +105,16 @@ name = "either"
 version = "1.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "48c757948c5ede0e46177b7add2e67155f70e33c07fea8284df6576da70b3719"
+
+[[package]]
+name = "getattrlistbulk"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e65718dfbb192923baed0b86b0e5363103570fdc39d5a2f25c572aa75144b712"
+dependencies = [
+ "bitflags",
+ "libc",
+]
 
 [[package]]
 name = "hashbrown"
